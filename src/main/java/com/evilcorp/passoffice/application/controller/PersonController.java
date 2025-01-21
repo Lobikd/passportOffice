@@ -61,12 +61,6 @@ public class PersonController {
 
     @PostMapping(value = "/overwriting/")
     public UUID overwritingPerson(@RequestBody @Valid PersonRequestDto overwritingRequestDto) {
-//        PersonRequestDto personRequestDto = repository.findById(personId)
-//                .orElseThrow(() -> new DataNotFoundException("Person with personId = " + personId + " not found"));
-//        repository.delete(personRequestDto);
-//        mapper.overwritingPersonRequest(personRequestDto, overwritingRequestDto);
-//        PersonRequestDto overwritingPerson = repository.save(personRequestDto);
-//        return overwritingPerson.getId();
         return personService.overwritingPerson(overwritingRequestDto);
     }
 }
