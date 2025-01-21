@@ -1,0 +1,31 @@
+spring:
+  application.name: passport-office
+  config.name: "${spring.application.name}"
+  liquibase:
+    enabled: false
+    url: jdbc:postgresql://localhost:8080/passport_office
+    user: po_adm
+    password: 123456
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: ${spring.liquibase.user}
+    password: ${spring.liquibase.password}
+    url: ${spring.liquibase.url}
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+        show_sql: true
+mdc:
+  processes:
+    - method-name: addPerson
+      process: ADD_PERSON
+    - method-name: deletePersonById
+      process: DELETE_PERSON_BY_ID
+    - method-name: deletePersonByPassportNum
+      process: DELETE_PERSON_BY_PASSPORT_NUM
+    - method-name: updatePerson
+      process: UPDATE_PERSON
+    - method-name: overwritingPerson
+      process: OVERWRITING_PERSON
