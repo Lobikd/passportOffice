@@ -12,9 +12,9 @@ import org.mapstruct.ReportingPolicy;
 )
 public interface PersonPatcher {
 
-    @BeanMapping(ignoreByDefault = true, nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
-    void patchUpdate(@MappingTarget PersonEntity actionEntity, PersonEntity action);
+    @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
+    void patchUpdate(@MappingTarget PersonEntity personEntity, PersonEntity person);
 
-    @BeanMapping(ignoreByDefault = true)
-    void patchOverwriting(@MappingTarget PersonEntity actionEntity, PersonEntity action);
+    @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.SET_TO_NULL)
+    void patchOverwriting(@MappingTarget PersonEntity personEntity, PersonEntity person);
 }

@@ -16,6 +16,4 @@ import org.mapstruct.ReportingPolicy;
 public interface PersonControllerMapper {
 
     PersonDto toPerson(PersonResponseDto personDto);
-
-    void overwritingPersonRequest(@MappingTarget PersonRequestDto personRequestDto, PersonRequestDto updateRequestDto);
 }

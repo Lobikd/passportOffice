@@ -8,4 +8,6 @@
 
     <include file="2024-09-17--01-properties.xml" relativeToChangelogFile="true"/>
     <include file="2024-09-17--02-add-person-table.xml" relativeToChangelogFile="true"/>
+    <include file="2025-01-24--01-add-income-to-person.xml" relativeToChangelogFile="true"/>
+    <include file="2025-02-04--01-correct-income-in-person-table.xml" relativeToChangelogFile="true"/>
 </databaseChangeLog>

@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.math.BigDecimal;
 import java.util.UUID;
 
 @Getter
@@ -21,5 +22,5 @@ public class PersonRequestDto {
     private String patronymic;
     private String country;
     private String passportNum;
-
+    private BigDecimal income;
 }

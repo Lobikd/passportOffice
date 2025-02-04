@@ -31,35 +31,34 @@ public class PersonController {
         return personService.addPerson(requestDto);
     }
 
-    @GetMapping("/get/{personId}")
+    @GetMapping("/get/id/{personId}")
     public PersonDto getPersonById(@PathVariable UUID personId) {
         PersonResponseDto person = personService.getPersonById(personId);
         return mapper.toPerson(person);
     }
 
-    @GetMapping("/get/{passportNum}")
+    @GetMapping("/get/passport/{passportNum}")
     public PersonDto getPersonByPassportNum(@PathVariable String passportNum) {
         PersonResponseDto person = personService.getPersonByPassportNum(passportNum);
         return mapper.toPerson(person);
     }
 
-    @DeleteMapping("/delete/{personId}")
+    @DeleteMapping("/delete/id/{personId}")
     public void deletePersonById(@PathVariable UUID personId) {
         personService.deletePersonById(personId);
     }
 
-    @DeleteMapping("/delete/{passportNum}")
+    @DeleteMapping("/delete/passport/{passportNum}")
     public void deletePersonByPassportNum(@PathVariable String passportNum) {
         personService.deletePersonByPassportNum(passportNum);
     }
 
-    @PatchMapping(value = "/update/{personId}")
-    public UUID updatePerson(@PathVariable UUID personId,
-                             @RequestBody @Valid PersonRequestDto updateRequestDto) {
+    @PatchMapping(value = "/update/")
+    public UUID updatePerson(@RequestBody @Valid PersonRequestDto updateRequestDto) {
         return personService.updatePerson(updateRequestDto);
     }
 
-    @PostMapping(value = "/overwriting/")
+    @PatchMapping(value = "/overwriting/")
     public UUID overwritingPerson(@RequestBody @Valid PersonRequestDto overwritingRequestDto) {
         return personService.overwritingPerson(overwritingRequestDto);
     }

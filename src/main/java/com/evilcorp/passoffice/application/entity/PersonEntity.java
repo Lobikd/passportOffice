@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 
+import java.math.BigDecimal;
 import java.util.UUID;
 
 @Entity
@@ -41,6 +42,9 @@ public class PersonEntity {
 
     @Column(name = "passport_num")
     private String passportNum;
+
+    @Column(name = "income")
+    private BigDecimal income;
 
     @Override
     public boolean equals(Object o) {
