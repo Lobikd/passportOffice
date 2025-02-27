@@ -8,7 +8,7 @@ import com.evilcorp.passoffice.application.exception.PersonNotFoundWithPassportN
 import com.evilcorp.passoffice.application.exception.PersonNotFoundWithPersonIdException;
 import com.evilcorp.passoffice.application.mapper.PersonAdapterMapper;
 import com.evilcorp.passoffice.application.patcher.PersonPatcher;
-import com.evilcorp.passoffice.application.repository.PersonRepository;
+import com.evilcorp.passoffice.application.repository.PersonJpaRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -20,7 +20,7 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class PersonAdapterImpl implements PersonAdapter {
 
-    private final PersonRepository repository;
+    private final PersonJpaRepository repository;
     private final PersonAdapterMapper mapper;
     private final PersonPatcher personPatcher;
 
