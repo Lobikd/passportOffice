@@ -12,6 +12,7 @@ public class PersonEntityGenerator {
 
     private final EasyRandom random = new EasyRandom(
             new EasyRandomParameters()
+                    .seed(ThreadLocalRandom.current().nextLong(9999999999L))
                     .stringLengthRange(10, 15)
                     .randomize(BigDecimal.class, () -> BigDecimal.valueOf(ThreadLocalRandom.current().nextLong(9999999999999L))
                             .divide(BigDecimal.valueOf(Math.pow(10, 5)), 5, RoundingMode.HALF_UP))
